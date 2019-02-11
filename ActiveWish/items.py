@@ -11,4 +11,9 @@ import scrapy
 class ActivewishItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    sort = scrapy.Field()
+    country = scrapy.Field()
+    continent = scrapy.Field()
+    GDP = scrapy.Field()
+    year = scrapy.Field()
     pass
