@@ -22,8 +22,8 @@ class ActivewishPipeline(object):
 
 
     def process_item(self, item, spider):
-        sql = 'insert into scrapy_gdp(id,sort,country,continent,GDP,year,createusercode,createusername,createtime) VALUES (uuid(),%s,%s,%s,%s,%s,%s,%s,sysdate())'
-        lis = (item['sort'], item['country'], item['continent'], item['GDP'], item['year'], '19860314', 'txl')
+        sql = 'insert into scrapy_gdp(id,sort,country,continent,GDP,year,createusercode,createusername,createtime) VALUES (%s,%s,%s,%s,%s,%s,%s,%s,sysdate())'
+        lis = (item['id'], item['sort'], item['country'], item['continent'], item['GDP'], item['year'], '19860314', 'txl')
         self.cur.execute(sql, lis)
         self.client.commit()
         #self.cur.close()
